@@ -14,10 +14,21 @@ struct ContentView: View {
         VStack {
             ForEach(superHeroArray) { hero in
                 HeroView(hero: hero)
+                    .onTapGesture {
+                    saveToDefaults(hero: hero)
+              
+                }
                 
             }
         }
     }
+    
+    
+    func saveToDefaults(hero: Superhero){
+        print(hero.name)
+    }
+    
+    
 }
 
 #Preview {
